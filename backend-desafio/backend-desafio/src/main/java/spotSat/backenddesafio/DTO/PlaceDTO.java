@@ -1,8 +1,10 @@
 package spotSat.backenddesafio.DTO;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
 public class PlaceDTO {
 
 	private Integer id;
@@ -10,13 +12,4 @@ public class PlaceDTO {
 	private double latitude;
 	private double longitude;
 	
-	public PlaceDTO(Integer id, String name, double latitude, double longitude) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.latitude = latitude;
-		this.longitude = longitude;
-	}
-	
-
 }

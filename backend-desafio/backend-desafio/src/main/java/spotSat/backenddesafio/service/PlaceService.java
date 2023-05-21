@@ -33,4 +33,31 @@ public class PlaceService {
 	private void addPlace(PlaceDTO placedto) {
 		placeDTO.put(placedto.getId(), placedto);
 	}
+
+	public PlaceDTO createPlace(PlaceDTO newPlace) {
+		int id = generateNextId();
+		newPlace.setId(id);
+		placeDTO.put(id, newPlace);
+		return newPlace;
+	}
+
+	public PlaceDTO updatePlace(int id, PlaceDTO updatedPlace) {
+		PlaceDTO place = placeDTO.get(id);
+		if (place != null) {
+			updatedPlace.setId(id);
+			placeDTO.put(id, updatedPlace);
+			return updatedPlace;
+		}
+		return null;
+	}
+
+	public boolean deletePlace(int id) {
+		return placeDTO.remove(id) != null;
+	}
+	
+	private Integer generateNextId() {
+		Integer maxId = placeDTO.keySet().stream().max(Integer::compareTo).orElse(0);
+        return maxId + 1;
+    }
+
 }
