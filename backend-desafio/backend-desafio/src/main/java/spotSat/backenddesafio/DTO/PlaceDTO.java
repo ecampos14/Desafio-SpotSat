@@ -11,5 +11,10 @@ public class PlaceDTO {
 	private String name;
 	private double latitude;
 	private double longitude;
-	
+
+
+	public void setDistance(double distance) {
+		// TODO Auto-generated method stub
+		
+	}
 }
