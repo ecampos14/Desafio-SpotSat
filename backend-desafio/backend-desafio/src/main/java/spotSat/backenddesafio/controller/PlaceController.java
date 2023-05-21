@@ -16,16 +16,15 @@ import spotSat.backenddesafio.service.PlaceService;
 public class PlaceController {
 
 	@Autowired
-    private PlaceService placeService;
+	private PlaceService placeService;
 
-    @GetMapping
-    public List<PlaceDTO> getAllPlaces() {
-        return placeService.getAllPlaces();
-    }
+	@GetMapping
+	public List<PlaceDTO> getAllPlaces() {
+		return placeService.getAllPlaces();
+	}
 
-    @GetMapping("/{id}")
-    public PlaceDTO getPlaceById(@PathVariable Integer id) {
-        return placeService.getPlaceById(id);
-    }
+	@GetMapping("/{id}")
+	public PlaceDTO getPlaceById(@PathVariable Integer id) {
+		return placeService.getPlaceById(id);
+	}
 }
-

@@ -54,10 +54,11 @@ public class PlaceService {
 	public boolean deletePlace(int id) {
 		return placeDTO.remove(id) != null;
 	}
-	
+
 	private Integer generateNextId() {
 		Integer maxId = placeDTO.keySet().stream().max(Integer::compareTo).orElse(0);
-        return maxId + 1;
-    }
+		return maxId + 1;
+	}
+
 
 }
